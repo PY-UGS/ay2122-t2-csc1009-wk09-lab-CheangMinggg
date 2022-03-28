@@ -12,7 +12,7 @@ public class RandomCharacter {
     public char getRandomUpperCaseCharacter(){
         char biggerChar = (char) ('A' + r.nextInt(26));
         return biggerChar;
-    }
+    } //random upper case character
    
     public int getRandomDigitCharacter() {
         int RandNo = r.nextInt(10);
