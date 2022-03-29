@@ -4,6 +4,7 @@ import org.junit.Test;
 
 public class RandomCharacterTest {
     RandomCharacter R = new RandomCharacter();
+    
     @Test
     public void checkLowerCaseLetters(){
         
@@ -31,12 +32,28 @@ public class RandomCharacterTest {
     }//test for all characters method
 
     @Test //test for prime numbers method
-    public void allValuesShouldBePrimeNumber(){
-        int value = R.getRandomDigitCharacter();
-        if (value == 2 || value ==3){
+    public void ValueBePrimeNumber(){
+        int randomValue = R.getRandomDigitCharacter();
+        boolean notPrime = false;
+        if (randomValue == 0){
+            notPrime = true;
+        }
+        else{
+            // to check if randomValue is divisible by 2 and onwards
+            for (int i = 2; i <= randomValue / 2 ; ++i){
+                if (randomValue % i == 0){
+                    notPrime = true;
+                    break;
+                }
+            }
+        }
+        if (!notPrime){
             assertTrue(true);
         } else{
-            assertFalse((value%2) == 0 || (value%3) == 0);
+            assertFalse(true);
         }
     }
 }
+
+
+
